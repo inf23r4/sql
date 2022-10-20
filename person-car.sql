@@ -1,3 +1,10 @@
+create table car (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    make VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    price NUMERIC(19, 2) NOT NULL
+);
+
 create table person (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -8,13 +15,6 @@ create table person (
     country_of_birth VARCHAR(50) NOT NULL
     car_id BIGINT REFERENCES car (id)
     UNIQUE(car_id)
-);
-
-create table car (
-    id BIGSERIAL NOT NULL PRIMARY KEY,
-    make VARCHAR(100) NOT NULL,
-    model VARCHAR(100) NOT NULL,
-    price NUMERIC(19, 2) NOT NULL
 );
 
 insert into person (first_name, last_name, gender, email, date_of_birth, country_of_birth) values ('Fernanda','Beardon', 'Female', 'fernanda@is.gd', '1954-10-28');
